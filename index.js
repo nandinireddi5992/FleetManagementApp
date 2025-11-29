@@ -109,3 +109,4 @@ document.getElementById("clearFilter").addEventListener("click", function () {
 
     renderData(fleetData);
 });
+
