@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        body { display: flex; gap: 20px; }
+
+        /* Sidebar */
+        #sidebar {
+            width: 250px;
+            padding: 15px;
+            height: 100%;
+            border: 1px solid grey;
+        }
+
+        /* Main content cards */
+        #fleetContainer {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            border: 1px solid #aaa;
+            padding: 10px;
+            box-shadow: 0 0 5px grey;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 300px;
+            background: #eee;
+            padding: 10px;
+            width: 70%;
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <select id="filterCategory">
+            <option value="All">All Categories</option>
+            <option value="Auto">Auto</option>
+            <option value="Car">Car</option>
+            <option value="Truck">Truck</option>
+            <option value="Bus">Bus</option>
+        </select>
+
+        <select id="filterAvailability">
+            <option value="All">All Status</option>
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+        </select>
+
+        <button id="clearFilter">Clear Filter</button>
+    </nav>
+
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+        <h3>Add Fleet</h3>
+
+        <input id="regno" type="text" placeholder="Vehicle Reg No"><br><br>
+
+        <select id="category">
+            <option value="">Select Category</option>
+            <option value="Auto">Auto</option>
+            <option value="Car">Car</option>
+            <option value="Truck">Truck</option>
+            <option value="Bus">Bus</option>
+        </select><br><br>
+
+        <input id="driver" type="text" placeholder="Driver Name"><br><br>
+         <select id="Availability">
+            <option value="">Select Availability</option>
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+        </select><br><br>
+        <button id="addBtn">Add Fleet</button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="fleetContainer"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
